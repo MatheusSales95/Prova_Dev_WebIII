@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hungry Bug — Reservas de Mesa</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topo">
+    <div class="topo-conteudo">
+      <span class="logo-marca" aria-hidden="true">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
+            <path d="M52 40 C 44 24 34 16 22 12" />
+            <path d="M68 40 C 76 24 86 16 98 12" />
+          </g>
+          <path fill="currentColor" fill-rule="evenodd"
+            d="M60 104 C 50 86 40 74 34 66 C 24 64 14 58 16 48 C 18 38 28 30 38 34 C 46 36 52 40 60 40 C 68 40 74 36 82 34 C 92 30 102 38 104 48 C 106 58 96 64 86 66 C 80 74 70 86 60 104 Z M32 48 m -5 0 a 5 5 0 1 0 10 0 a 5 5 0 1 0 -10 0 M88 48 m -5 0 a 5 5 0 1 0 10 0 a 5 5 0 1 0 -10 0" />
+        </svg>
+      </span>
+      <div>
+        <h1>Hungry Bug</h1>
+        <p class="subtitulo">Sistema de Reservas de Mesa</p>
+      </div>
+    </div>
+    <nav class="abas">
+      <button class="aba ativa" data-aba="mapa">Mapa de Mesas</button>
+      <button class="aba" data-aba="reservas">Reservas</button>
+      <button class="aba" data-aba="nova">Nova Reserva</button>
+    </nav>
+  </header>
+
+  <!-- Área de mensagens (toast) -->
+  <div id="toast" class="toast oculto"></div>
+
+  <main class="conteudo">
+
+    <!-- ABA: MAPA DO SALÃO (planta baixa interativa) -->
+    <section id="aba-mapa" class="painel ativo">
+      <div class="cabecalho-secao">
+        <h2>Mapa do Salão</h2>
+        <button class="btn-secundario" id="btn-atualizar-mapa">↻ Atualizar</button>
+      </div>
+
+      <div class="map-toolbar">
+        <div class="legend">
+          <span class="legend-item"><span class="dot ok"></span> Disponível</span>
+          <span class="legend-item"><span class="dot warn"></span> Reservado</span>
+          <span class="legend-item"><span class="dot busy"></span> Ocupado</span>
+        </div>
+        <div class="counts" id="counts">Carregando...</div>
+      </div>
+
+      <div class="map-wrap">
+        <div class="floor" id="floor" role="group" aria-label="Mapa das mesas do restaurante">
+          <!-- zonas -->
+          <div class="zone" style="left:9.5%;top:5%;width:45%;height:88%">
+            <span class="zone-label">Salão</span>
+          </div>
+          <div class="zone" style="left:57%;top:5%;width:38.5%;height:40%">
+            <span class="zone-label">Varanda</span>
+          </div>
+          <div class="zone" style="left:57%;top:50%;width:29%;height:43%">
+            <span class="zone-label">Área Interna</span>
+          </div>
+
+          <!-- elementos arquitetônicos -->
+          <div class="arch bar-counter"><span>Bar</span></div>
+          <div class="arch entrance"><span>Entrada</span></div>
+          <div class="arch kitchen"><span>Cozinha</span></div>
+          <div class="arch caixa" style="left:2.6%;top:54%;width:5%;height:18%"><span>Caixa</span></div>
+          <div class="arch wc" style="right:1.5%;top:52%;width:8.5%;height:39%">
+            <div><i>🚺</i> WC</div>
+            <div><i>🚹</i> WC</div>
+          </div>
+
+          <!-- janelas -->
+          <div class="window h" style="left:60%;width:8%"></div>
+          <div class="window h" style="left:71%;width:8%"></div>
+          <div class="window h" style="left:82%;width:8%"></div>
+          <div class="window v right" style="top:12%;height:13%"></div>
+          <div class="window v right" style="top:29%;height:13%"></div>
+          <div class="window v" style="top:76%;height:11%"></div>
+
+          <!-- plantas -->
+          <div class="plant" style="left:58.5%;top:8%"></div>
+          <div class="plant" style="left:92.5%;top:42%"></div>
+          <div class="plant" style="left:5.5%;top:88%"></div>
+
+          <!-- mesas injetadas via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ABA: LISTA DE RESERVAS -->
+    <section id="aba-reservas" class="painel">
+      <div class="cabecalho-secao">
+        <h2>Reservas</h2>
+        <button class="btn-secundario" id="btn-atualizar-reservas">↻ Atualizar</button>
+      </div>
+
+      <div class="filtros">
+        <input type="text" id="filtro-cliente" placeholder="Filtrar por cliente" />
+        <input type="number" id="filtro-mesa" placeholder="Nº da mesa" min="1" />
+        <input type="date" id="filtro-data" />
+        <select id="filtro-status">
+          <option value="">Todos os status</option>
+          <option value="reservado">Reservado</option>
+          <option value="ocupado">Ocupado</option>
+          <option value="finalizado">Finalizado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+        <button class="btn-primario" id="btn-filtrar">Filtrar</button>
+        <button class="btn-secundario" id="btn-limpar-filtro">Limpar</button>
+      </div>
+
+      <div class="tabela-wrapper">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>Cliente</th>
+              <th>Contato</th>
+              <th>Mesa</th>
+              <th>Pessoas</th>
+              <th>Data/Hora</th>
+              <th>Duração</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-reservas">
+            <tr><td colspan="8" class="carregando">Carregando reservas...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ABA: NOVA RESERVA -->
+    <section id="aba-nova" class="painel">
+      <div class="cabecalho-secao">
+        <h2>Nova Reserva</h2>
+      </div>
+      <form id="form-nova-reserva" class="formulario">
+        <div class="campo">
+          <label for="nomeCliente">Nome do cliente *</label>
+          <input type="text" id="nomeCliente" name="nomeCliente" required minlength="2" />
+        </div>
+        <div class="campo">
+          <label for="contatoCliente">Contato do cliente *</label>
+          <input type="text" id="contatoCliente" name="contatoCliente" required placeholder="Telefone ou e-mail" />
+        </div>
+        <div class="campo">
+          <label for="numeroMesa">Mesa *</label>
+          <select id="numeroMesa" name="numeroMesa" required>
+            <option value="">Selecione uma mesa</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="quantidadePessoas">Quantidade de pessoas *</label>
+          <input type="number" id="quantidadePessoas" name="quantidadePessoas" required min="1" />
+        </div>
+        <div class="campo">
+          <label for="dataHora">Data e hora *</label>
+          <input type="datetime-local" id="dataHora" name="dataHora" required />
+        </div>
+        <div class="campo">
+          <label for="duracaoMinutos">Duração (minutos)</label>
+          <input type="number" id="duracaoMinutos" name="duracaoMinutos" min="1" value="90" />
+          <small>Padrão: 90 minutos (1h30)</small>
+        </div>
+        <div class="campo campo-largo">
+          <label for="observacoes">Observações</label>
+          <textarea id="observacoes" name="observacoes" rows="2"></textarea>
+        </div>
+        <div class="campo campo-largo">
+          <button type="submit" class="btn-primario">Cadastrar Reserva</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- MODAL: reservar mesa (a partir do mapa) -->
+  <div id="modal-mesa" class="modal oculto">
+    <div class="modal-conteudo">
+      <button class="fechar-modal" data-fechar>&times;</button>
+      <div class="modal-mesa-head">
+        <h3 id="modal-mesa-titulo">Mesa</h3>
+        <div class="modal-mesa-sub" id="modal-mesa-sub"></div>
+      </div>
+      <div class="modal-mesa-info" id="modal-mesa-info"></div>
+      <form id="form-reserva-mapa" class="form-modal">
+        <input type="hidden" id="rm-numeroMesa" />
+        <div class="campo">
+          <label for="rm-nomeCliente">Nome do cliente *</label>
+          <input type="text" id="rm-nomeCliente" required minlength="2" placeholder="Maria Silva" />
+        </div>
+        <div class="campo">
+          <label for="rm-contatoCliente">Contato *</label>
+          <input type="text" id="rm-contatoCliente" required placeholder="(11) 99999-0000" />
+        </div>
+        <div class="form-linha">
+          <div class="campo">
+            <label for="rm-quantidadePessoas">Pessoas *</label>
+            <input type="number" id="rm-quantidadePessoas" min="1" required value="2" />
+          </div>
+          <div class="campo">
+            <label for="rm-dataHora">Data e hora *</label>
+            <input type="datetime-local" id="rm-dataHora" required />
+          </div>
+        </div>
+        <div class="form-linha">
+          <div class="campo">
+            <label for="rm-duracaoMinutos">Duração (min)</label>
+            <input type="number" id="rm-duracaoMinutos" min="1" value="90" />
+          </div>
+          <div class="campo"></div>
+        </div>
+        <div class="campo">
+          <label for="rm-observacoes">Observações <span class="opcional">(opcional)</span></label>
+          <textarea id="rm-observacoes" rows="2" placeholder="Aniversário, cadeira de bebê..."></textarea>
+        </div>
+        <button type="submit" class="btn-primario btn-bloco">Confirmar reserva</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: editar reserva -->
+  <div id="modal-editar" class="modal oculto">
+    <div class="modal-conteudo">
+      <button class="fechar-modal" data-fechar>&times;</button>
+      <h3>Editar Reserva</h3>
+      <form id="form-editar-reserva" class="formulario">
+        <input type="hidden" id="edit-id" />
+        <div class="campo">
+          <label for="edit-nomeCliente">Nome do cliente *</label>
+          <input type="text" id="edit-nomeCliente" required />
+        </div>
+        <div class="campo">
+          <label for="edit-contatoCliente">Contato *</label>
+          <input type="text" id="edit-contatoCliente" required />
+        </div>
+        <div class="campo">
+          <label for="edit-numeroMesa">Mesa *</label>
+          <select id="edit-numeroMesa" required></select>
+        </div>
+        <div class="campo">
+          <label for="edit-quantidadePessoas">Pessoas *</label>
+          <input type="number" id="edit-quantidadePessoas" required min="1" />
+        </div>
+        <div class="campo">
+          <label for="edit-dataHora">Data e hora *</label>
+          <input type="datetime-local" id="edit-dataHora" required />
+        </div>
+        <div class="campo">
+          <label for="edit-duracaoMinutos">Duração (min)</label>
+          <input type="number" id="edit-duracaoMinutos" min="1" />
+        </div>
+        <div class="campo campo-largo">
+          <label for="edit-observacoes">Observações</label>
+          <textarea id="edit-observacoes" rows="2"></textarea>
+        </div>
+        <div class="campo campo-largo">
+          <button type="submit" class="btn-primario">Salvar alterações</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
