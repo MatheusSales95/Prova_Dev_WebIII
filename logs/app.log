@@ -224,3 +224,12 @@
 [2026-06-12T23:13:45.071Z] [INFO] GET /api/reservas?
 [2026-06-12T23:13:48.049Z] [INFO] GET /api/mesas
 [2026-06-12T23:13:51.207Z] [INFO] GET /api/mesas
+[2026-06-12T23:26:49.420Z] [INFO] MongoDB conectado em: mongodb://localhost:27017/reserva
+[2026-06-12T23:26:49.431Z] [INFO] Servidor rodando em http://localhost:3000
+[2026-06-12T23:27:08.420Z] [INFO] GET /api/reservas?status=ocupado&mesa=5
+[2026-06-12T23:27:08.501Z] [INFO] PUT /api/reservas/6a2c923ee30aec5217958cd2
+[2026-06-12T23:27:08.544Z] [INFO] Reserva atualizada: id 6a2c923ee30aec5217958cd2, mesa 5
+[2026-06-12T23:27:08.588Z] [INFO] PUT /api/reservas/6a2c923ee30aec5217958cd2
+[2026-06-12T23:27:27.795Z] [INFO] MongoDB conectado em: mongodb://localhost:27017/reserva
+[2026-06-12T23:27:27.836Z] [INFO] Seed de reservas concluído: 7 reservas inseridas.
+[2026-06-12T23:27:27.866Z] [ERROR] Conexão com o MongoDB foi perdida.

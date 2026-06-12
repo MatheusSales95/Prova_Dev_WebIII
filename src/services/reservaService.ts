@@ -92,10 +92,14 @@ export async function atualizarStatusReservas(agora: Date = new Date()): Promise
  *  - não pode haver conflito de horário com outra reserva ativa da mesma mesa.
  *
  * @param idIgnorar id de reserva a ignorar na checagem de conflito (usado em updates).
+ * @param verificarAntecedencia se a antecedência mínima de 1h deve ser exigida.
+ *        Em updates que NÃO alteram a dataHora, deve ser false (ex.: editar só as
+ *        observações de uma reserva em andamento não deve falhar por antecedência).
  */
 export async function validarRegrasReserva(
   dados: DadosReserva,
-  idIgnorar?: string
+  idIgnorar?: string,
+  verificarAntecedencia = true
 ): Promise<void> {
   const { numeroMesa, quantidadePessoas, dataHora, duracaoMinutos } = dados;
 
@@ -113,14 +117,16 @@ export async function validarRegrasReserva(
     );
   }
 
-  // 3. Antecedência mínima de 1 hora.
+  // 3. Antecedência mínima de 1 hora (só quando a data está sendo definida/alterada).
   const inicio = new Date(dataHora).getTime();
   if (Number.isNaN(inicio)) {
     throw new ErroNegocio('Data e hora da reserva inválidas.');
   }
-  const agora = Date.now();
-  if (inicio < agora + ANTECEDENCIA_MINIMA_MS) {
-    throw new ErroNegocio('A reserva deve ser feita com antecedência mínima de 1 hora.');
+  if (verificarAntecedencia) {
+    const agora = Date.now();
+    if (inicio < agora + ANTECEDENCIA_MINIMA_MS) {
+      throw new ErroNegocio('A reserva deve ser feita com antecedência mínima de 1 hora.');
+    }
   }
 
   // 4. Conflito de horário: nenhuma outra reserva ativa (reservado/ocupado)

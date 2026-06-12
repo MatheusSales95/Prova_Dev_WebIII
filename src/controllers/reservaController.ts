@@ -172,6 +172,12 @@ export async function atualizarReserva(req: Request, res: Response): Promise<voi
     const novaDuracao =
       duracaoMinutos !== undefined ? Number(duracaoMinutos) : reserva.duracaoMinutos;
 
+    // A antecedência mínima só é cobrada quando a dataHora é realmente alterada.
+    // Assim, editar (ex.) as observações de uma reserva em andamento não falha.
+    const dataHoraAlterada =
+      dataHora !== undefined &&
+      new Date(dataHora).getTime() !== new Date(reserva.dataHora).getTime();
+
     // Revalida as regras de negócio (ignorando a própria reserva no conflito).
     await validarRegrasReserva(
       {
@@ -180,7 +186,8 @@ export async function atualizarReserva(req: Request, res: Response): Promise<voi
         dataHora: novaData,
         duracaoMinutos: novaDuracao,
       },
-      reserva.id
+      reserva.id,
+      dataHoraAlterada
     );
 
     reserva.nomeCliente = nomeCliente ?? reserva.nomeCliente;
