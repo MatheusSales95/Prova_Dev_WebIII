@@ -1,0 +1,226 @@
+[2026-06-12T22:24:09.713Z] [INFO] MongoDB conectado em: mongodb://localhost:27017/reserva
+[2026-06-12T22:24:09.751Z] [INFO] Seed concluído: 12 mesas cadastradas.
+[2026-06-12T22:24:09.760Z] [ERROR] Conexão com o MongoDB foi perdida.
+[2026-06-12T22:24:18.037Z] [INFO] MongoDB conectado em: mongodb://localhost:27017/reserva
+[2026-06-12T22:24:18.043Z] [INFO] Servidor rodando em http://localhost:3000
+[2026-06-12T22:24:26.159Z] [INFO] GET /api/health
+[2026-06-12T22:24:26.174Z] [INFO] GET /api/mesas
+[2026-06-12T22:24:45.382Z] [INFO] POST /api/reservas
+[2026-06-12T22:24:45.416Z] [INFO] Reserva criada: mesa 3, cliente "Maria Silva", id 6a2c872d1a813e9428cd376a
+[2026-06-12T22:24:45.435Z] [INFO] POST /api/reservas
+[2026-06-12T22:24:45.499Z] [INFO] POST /api/reservas
+[2026-06-12T22:24:45.517Z] [INFO] POST /api/reservas
+[2026-06-12T22:24:45.535Z] [INFO] GET /api/mesas/3
+[2026-06-12T22:25:03.432Z] [INFO] GET /api/reservas?status=reservado
+[2026-06-12T22:25:03.478Z] [INFO] GET /api/reservas?cliente=maria
+[2026-06-12T22:25:03.519Z] [INFO] GET /api/reservas?status=reservado
+[2026-06-12T22:25:03.556Z] [INFO] DELETE /api/reservas/6a2c872d1a813e9428cd376a
+[2026-06-12T22:25:03.578Z] [INFO] Reserva cancelada: id 6a2c872d1a813e9428cd376a, mesa 3
+[2026-06-12T22:25:03.600Z] [INFO] GET /api/mesas
+[2026-06-12T22:25:03.640Z] [INFO] GET /
+[2026-06-12T22:25:03.660Z] [INFO] GET /css/style.css
+[2026-06-12T22:25:03.673Z] [INFO] GET /js/app.js
+[2026-06-12T22:25:53.658Z] [INFO] GET /
+[2026-06-12T22:25:53.700Z] [INFO] GET /css/style.css
+[2026-06-12T22:25:53.702Z] [INFO] GET /js/app.js
+[2026-06-12T22:25:53.748Z] [INFO] GET /api/mesas
+[2026-06-12T22:25:53.767Z] [INFO] GET /api/mesas
+[2026-06-12T22:25:53.844Z] [INFO] GET /favicon.ico
+[2026-06-12T22:25:53.848Z] [INFO] GET /css/style.css
+[2026-06-12T22:27:53.091Z] [INFO] GET /api/reservas?
+[2026-06-12T22:27:56.303Z] [INFO] GET /api/mesas
+[2026-06-12T22:31:49.568Z] [INFO] GET /
+[2026-06-12T22:31:49.584Z] [INFO] GET /css/style.css
+[2026-06-12T22:31:49.585Z] [INFO] GET /js/app.js
+[2026-06-12T22:31:49.605Z] [INFO] GET /api/mesas
+[2026-06-12T22:31:49.620Z] [INFO] GET /api/mesas
+[2026-06-12T22:31:49.704Z] [INFO] GET /favicon.svg
+[2026-06-12T22:32:21.084Z] [INFO] GET /
+[2026-06-12T22:32:21.136Z] [INFO] GET /css/style.css
+[2026-06-12T22:32:21.138Z] [INFO] GET /js/app.js
+[2026-06-12T22:32:21.181Z] [INFO] GET /api/mesas
+[2026-06-12T22:32:21.199Z] [INFO] GET /api/mesas
+[2026-06-12T22:32:21.278Z] [INFO] GET /favicon.svg
+[2026-06-12T22:32:21.281Z] [INFO] GET /css/style.css
+[2026-06-12T22:32:35.761Z] [INFO] GET /api/reservas?
+[2026-06-12T22:32:37.675Z] [INFO] GET /api/reservas?
+[2026-06-12T22:32:38.462Z] [INFO] GET /api/mesas
+[2026-06-12T22:32:51.694Z] [INFO] GET /api/reservas?
+[2026-06-12T22:32:54.987Z] [INFO] GET /api/mesas
+[2026-06-12T22:34:17.366Z] [INFO] GET /api/reservas?
+[2026-06-12T22:34:22.190Z] [INFO] GET /api/reservas?
+[2026-06-12T22:34:22.960Z] [INFO] GET /api/mesas
+[2026-06-12T22:34:26.019Z] [INFO] GET /api/reservas?
+[2026-06-12T22:34:28.395Z] [INFO] GET /api/reservas?
+[2026-06-12T22:34:29.263Z] [INFO] GET /api/mesas
+[2026-06-12T22:34:57.526Z] [INFO] GET /api/mesas/1
+[2026-06-12T22:36:50.198Z] [INFO] POST /api/reservas
+[2026-06-12T22:36:58.687Z] [INFO] POST /api/reservas
+[2026-06-12T22:36:58.697Z] [INFO] Reserva criada: mesa 3, cliente "matheus", id 6a2c8a0a1a813e9428cd37c1
+[2026-06-12T22:36:58.706Z] [INFO] GET /api/reservas?
+[2026-06-12T22:37:03.629Z] [INFO] GET /api/reservas/6a2c8a0a1a813e9428cd37c1
+[2026-06-12T22:37:07.611Z] [INFO] PUT /api/reservas/6a2c8a0a1a813e9428cd37c1
+[2026-06-12T22:37:07.626Z] [INFO] Reserva atualizada: id 6a2c8a0a1a813e9428cd37c1, mesa 3
+[2026-06-12T22:37:07.634Z] [INFO] GET /api/reservas?
+[2026-06-12T22:37:22.761Z] [INFO] GET /api/reservas?status=cancelado
+[2026-06-12T22:37:27.011Z] [INFO] GET /api/reservas?status=finalizado
+[2026-06-12T22:37:30.347Z] [INFO] GET /api/reservas?status=ocupado
+[2026-06-12T22:37:31.516Z] [INFO] GET /api/reservas?status=ocupado
+[2026-06-12T22:37:34.837Z] [INFO] GET /api/reservas?status=reservado
+[2026-06-12T22:39:07.576Z] [INFO] GET /api/reservas?status=ocupado
+[2026-06-12T22:39:09.672Z] [INFO] GET /api/mesas
+[2026-06-12T22:39:13.116Z] [INFO] GET /api/mesas/1
+[2026-06-12T22:40:38.720Z] [INFO] POST /api/reservas
+[2026-06-12T22:40:52.879Z] [INFO] POST /api/reservas
+[2026-06-12T22:41:01.064Z] [INFO] POST /api/reservas
+[2026-06-12T22:41:06.178Z] [INFO] POST /api/reservas
+[2026-06-12T22:41:06.190Z] [INFO] Reserva criada: mesa 1, cliente "RaFla", id 6a2c8b021a813e9428cd37e7
+[2026-06-12T22:41:06.197Z] [INFO] GET /api/reservas?status=ocupado
+[2026-06-12T22:41:10.030Z] [INFO] GET /api/mesas
+[2026-06-12T22:41:37.712Z] [INFO] GET /api/reservas?status=ocupado
+[2026-06-12T22:41:49.433Z] [INFO] GET /api/reservas?status=reservado
+[2026-06-12T22:49:46.126Z] [INFO] GET /
+[2026-06-12T22:49:46.165Z] [INFO] GET /css/style.css
+[2026-06-12T22:49:46.167Z] [INFO] GET /js/app.js
+[2026-06-12T22:49:46.217Z] [INFO] GET /api/mesas
+[2026-06-12T22:49:46.235Z] [INFO] GET /api/mesas
+[2026-06-12T22:49:46.265Z] [INFO] GET /css/style.css
+[2026-06-12T22:55:31.650Z] [INFO] GET /
+[2026-06-12T22:55:32.491Z] [INFO] GET /
+[2026-06-12T22:55:32.506Z] [INFO] GET /css/style.css
+[2026-06-12T22:55:32.508Z] [INFO] GET /js/app.js
+[2026-06-12T22:55:32.796Z] [INFO] GET /api/mesas
+[2026-06-12T22:55:32.810Z] [INFO] GET /api/mesas
+[2026-06-12T22:55:33.160Z] [INFO] GET /favicon.svg
+[2026-06-12T22:56:22.539Z] [INFO] GET /api/mesas
+[2026-06-12T22:56:37.313Z] [INFO] GET /
+[2026-06-12T22:56:37.364Z] [INFO] GET /css/style.css
+[2026-06-12T22:56:37.366Z] [INFO] GET /js/app.js
+[2026-06-12T22:56:37.662Z] [INFO] GET /api/mesas
+[2026-06-12T22:56:37.681Z] [INFO] GET /api/mesas
+[2026-06-12T22:57:37.667Z] [INFO] GET /api/mesas
+[2026-06-12T22:57:37.949Z] [INFO] GET /api/reservas?
+[2026-06-12T22:57:41.307Z] [INFO] GET /api/reservas?
+[2026-06-12T22:57:59.884Z] [INFO] GET /
+[2026-06-12T22:57:59.899Z] [INFO] GET /css/style.css
+[2026-06-12T22:57:59.900Z] [INFO] GET /js/app.js
+[2026-06-12T22:58:00.204Z] [INFO] GET /api/mesas
+[2026-06-12T22:58:00.220Z] [INFO] GET /api/mesas
+[2026-06-12T22:58:00.576Z] [INFO] GET /favicon.svg
+[2026-06-12T22:59:03.303Z] [INFO] GET /
+[2026-06-12T22:59:03.353Z] [INFO] GET /css/style.css
+[2026-06-12T22:59:03.356Z] [INFO] GET /js/app.js
+[2026-06-12T22:59:03.468Z] [INFO] GET /api/mesas
+[2026-06-12T22:59:03.484Z] [INFO] GET /api/mesas
+[2026-06-12T22:59:03.499Z] [INFO] GET /css/style.css
+[2026-06-12T23:00:03.471Z] [INFO] GET /api/mesas
+[2026-06-12T23:01:21.012Z] [INFO] GET /
+[2026-06-12T23:01:21.027Z] [INFO] GET /css/style.css
+[2026-06-12T23:01:21.028Z] [INFO] GET /js/app.js
+[2026-06-12T23:01:21.265Z] [INFO] GET /api/mesas
+[2026-06-12T23:01:21.281Z] [INFO] GET /api/mesas
+[2026-06-12T23:01:21.613Z] [INFO] GET /favicon.svg
+[2026-06-12T23:02:06.658Z] [INFO] GET /
+[2026-06-12T23:02:06.700Z] [INFO] GET /css/style.css
+[2026-06-12T23:02:06.702Z] [INFO] GET /js/app.js
+[2026-06-12T23:02:06.970Z] [INFO] GET /api/mesas
+[2026-06-12T23:02:06.983Z] [INFO] GET /api/mesas
+[2026-06-12T23:02:07.598Z] [INFO] GET /favicon.svg
+[2026-06-12T23:03:06.980Z] [INFO] GET /api/mesas
+[2026-06-12T23:04:06.981Z] [INFO] GET /api/mesas
+[2026-06-12T23:04:56.248Z] [INFO] MongoDB conectado em: mongodb://localhost:27017/reserva
+[2026-06-12T23:04:56.286Z] [INFO] Seed de reservas concluído: 7 reservas inseridas.
+[2026-06-12T23:04:56.329Z] [ERROR] Conexão com o MongoDB foi perdida.
+[2026-06-12T23:05:05.842Z] [INFO] GET /api/mesas
+[2026-06-12T23:05:06.979Z] [INFO] GET /api/mesas
+[2026-06-12T23:05:16.754Z] [INFO] GET /
+[2026-06-12T23:05:16.768Z] [INFO] GET /css/style.css
+[2026-06-12T23:05:16.769Z] [INFO] GET /js/app.js
+[2026-06-12T23:05:17.070Z] [INFO] GET /api/mesas
+[2026-06-12T23:05:17.086Z] [INFO] GET /api/mesas
+[2026-06-12T23:05:17.424Z] [INFO] GET /favicon.svg
+[2026-06-12T23:06:06.979Z] [INFO] GET /api/mesas
+[2026-06-12T23:06:51.120Z] [INFO] GET /
+[2026-06-12T23:06:51.178Z] [INFO] GET /css/style.css
+[2026-06-12T23:06:51.179Z] [INFO] GET /js/app.js
+[2026-06-12T23:06:51.205Z] [INFO] GET /api/mesas
+[2026-06-12T23:06:51.222Z] [INFO] GET /api/mesas
+[2026-06-12T23:06:51.319Z] [INFO] GET /favicon.svg
+[2026-06-12T23:07:51.208Z] [INFO] GET /api/mesas
+[2026-06-12T23:07:54.124Z] [INFO] POST /api/reservas
+[2026-06-12T23:07:54.135Z] [INFO] Reserva criada: mesa 1, cliente "RaFla e Rubysss", id 6a2c914a1a813e9428cd3864
+[2026-06-12T23:07:54.146Z] [INFO] GET /api/mesas
+[2026-06-12T23:07:59.337Z] [INFO] GET /api/reservas?
+[2026-06-12T23:08:03.313Z] [INFO] GET /api/reservas?
+[2026-06-12T23:08:10.837Z] [INFO] GET /api/reservas?status=reservado
+[2026-06-12T23:08:14.452Z] [INFO] GET /api/reservas?status=ocupado
+[2026-06-12T23:08:17.794Z] [INFO] GET /api/reservas?status=finalizado
+[2026-06-12T23:08:22.556Z] [INFO] GET /api/reservas?status=cancelado
+[2026-06-12T23:08:26.656Z] [INFO] GET /api/reservas?
+[2026-06-12T23:08:37.953Z] [INFO] GET /api/mesas
+[2026-06-12T23:08:51.207Z] [INFO] GET /api/mesas
+[2026-06-12T23:09:51.215Z] [INFO] GET /api/mesas
+[2026-06-12T23:10:51.213Z] [INFO] GET /api/mesas
+[2026-06-12T23:11:32.860Z] [INFO] MongoDB conectado em: mongodb://localhost:27017/reserva
+[2026-06-12T23:11:32.904Z] [INFO] Seed de reservas concluído: 7 reservas inseridas.
+[2026-06-12T23:11:32.931Z] [ERROR] Conexão com o MongoDB foi perdida.
+[2026-06-12T23:11:33.110Z] [INFO] GET /api/health
+[2026-06-12T23:11:33.112Z] [INFO] GET /api/mesas
+[2026-06-12T23:11:33.131Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:33.138Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:33.144Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:33.154Z] [INFO] Reserva criada: mesa 4, cliente "Cliente Valido", id 6a2c92251a813e9428cd388e
+[2026-06-12T23:11:33.158Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:33.166Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:33.174Z] [INFO] Reserva criada: mesa 4, cliente "Sem Conflito", id 6a2c92251a813e9428cd3894
+[2026-06-12T23:11:33.176Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:33.182Z] [INFO] Reserva criada: mesa 12, cliente "Sem Obs", id 6a2c92251a813e9428cd3898
+[2026-06-12T23:11:33.185Z] [INFO] GET /api/reservas
+[2026-06-12T23:11:34.390Z] [INFO] MongoDB conectado em: mongodb://localhost:27017/reserva
+[2026-06-12T23:11:34.426Z] [INFO] Seed de reservas concluído: 7 reservas inseridas.
+[2026-06-12T23:11:34.451Z] [ERROR] Conexão com o MongoDB foi perdida.
+[2026-06-12T23:11:51.215Z] [INFO] GET /api/mesas
+[2026-06-12T23:11:56.662Z] [INFO] MongoDB conectado em: mongodb://localhost:27017/reserva
+[2026-06-12T23:11:56.701Z] [INFO] Seed de reservas concluído: 7 reservas inseridas.
+[2026-06-12T23:11:56.726Z] [ERROR] Conexão com o MongoDB foi perdida.
+[2026-06-12T23:11:56.865Z] [INFO] GET /api/health
+[2026-06-12T23:11:56.867Z] [INFO] GET /api/mesas
+[2026-06-12T23:11:56.880Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:56.886Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:56.891Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:56.898Z] [INFO] Reserva criada: mesa 4, cliente "Cliente Valido", id 6a2c923c1a813e9428cd38a6
+[2026-06-12T23:11:56.901Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:56.909Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:56.919Z] [INFO] Reserva criada: mesa 4, cliente "Sem Conflito", id 6a2c923c1a813e9428cd38ac
+[2026-06-12T23:11:56.922Z] [INFO] POST /api/reservas
+[2026-06-12T23:11:56.933Z] [INFO] Reserva criada: mesa 12, cliente "Sem Obs", id 6a2c923c1a813e9428cd38b0
+[2026-06-12T23:11:56.936Z] [INFO] GET /api/reservas
+[2026-06-12T23:11:56.947Z] [INFO] GET /api/reservas?cliente=Cliente%20Valido
+[2026-06-12T23:11:56.959Z] [INFO] GET /api/reservas?mesa=4
+[2026-06-12T23:11:56.968Z] [INFO] GET /api/reservas?status=reservado
+[2026-06-12T23:11:56.978Z] [INFO] GET /api/reservas?data=2026-06-12
+[2026-06-12T23:11:56.989Z] [INFO] GET /api/reservas/6a2c923c1a813e9428cd38a6
+[2026-06-12T23:11:56.994Z] [INFO] PUT /api/reservas/6a2c923c1a813e9428cd38a6
+[2026-06-12T23:11:57.006Z] [INFO] Reserva atualizada: id 6a2c923c1a813e9428cd38a6, mesa 4
+[2026-06-12T23:11:57.009Z] [INFO] PUT /api/reservas/6a2c923c1a813e9428cd38a6
+[2026-06-12T23:11:57.016Z] [INFO] DELETE /api/reservas/6a2c923c1a813e9428cd38a6
+[2026-06-12T23:11:57.023Z] [INFO] Reserva cancelada: id 6a2c923c1a813e9428cd38a6, mesa 4
+[2026-06-12T23:11:57.025Z] [INFO] GET /api/reservas?status=cancelado
+[2026-06-12T23:11:57.031Z] [INFO] DELETE /api/reservas/6a2c923c1a813e9428cd38ac
+[2026-06-12T23:11:57.037Z] [INFO] Reserva cancelada: id 6a2c923c1a813e9428cd38ac, mesa 4
+[2026-06-12T23:11:57.039Z] [INFO] DELETE /api/reservas/6a2c923c1a813e9428cd38b0
+[2026-06-12T23:11:57.045Z] [INFO] Reserva cancelada: id 6a2c923c1a813e9428cd38b0, mesa 12
+[2026-06-12T23:11:57.047Z] [INFO] GET /api/mesas
+[2026-06-12T23:11:57.058Z] [INFO] GET /api/reservas?status=finalizado
+[2026-06-12T23:11:57.065Z] [INFO] GET /api/mesas/5
+[2026-06-12T23:11:57.075Z] [INFO] GET /
+[2026-06-12T23:11:57.078Z] [INFO] GET /css/style.css
+[2026-06-12T23:11:57.081Z] [INFO] GET /js/app.js
+[2026-06-12T23:11:57.083Z] [INFO] GET /favicon.svg
+[2026-06-12T23:11:58.169Z] [INFO] MongoDB conectado em: mongodb://localhost:27017/reserva
+[2026-06-12T23:11:58.204Z] [INFO] Seed de reservas concluído: 7 reservas inseridas.
+[2026-06-12T23:11:58.230Z] [ERROR] Conexão com o MongoDB foi perdida.
+[2026-06-12T23:12:51.216Z] [INFO] GET /api/mesas
+[2026-06-12T23:13:45.071Z] [INFO] GET /api/reservas?
+[2026-06-12T23:13:48.049Z] [INFO] GET /api/mesas
+[2026-06-12T23:13:51.207Z] [INFO] GET /api/mesas
